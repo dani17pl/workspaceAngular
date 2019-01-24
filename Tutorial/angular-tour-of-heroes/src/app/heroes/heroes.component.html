@@ -1,0 +1,29 @@
+<h2>My Heroes</h2>
+    <div class="row">
+        <div class="col-md-3">          
+            <li *ngFor="let hero of heroes" >
+            <a routerLink="/detail/{{hero.id}}">
+                <label class=" col-md-2 bg-dark text-white">{{hero.id}}</label>
+                <label class=" col-md-7 class=badge badge-secondary">{{hero.name}}
+                   
+                </label>
+                
+            </a>       
+            <button class="delete btn-link " title="delete hero"
+            (click)="delete(hero)">x</button>  
+            </li>
+          
+        </div>
+        <div class="col-md-7">
+            <div class="row justify-content-start form-group">
+                <form class="form-inline col-md-8 ">
+                <label class="col-md-12 clearfix">Hero name:
+                  <input class="col-md-7" #heroName />
+                  <button type="submit" class="btn btn-primary float-left btn-sm"(click)="add(heroName.value); heroName.value=''">
+                        add
+                      </button>
+                </label>
+            </form>
+              </div>
+            </div>  
+        </div>

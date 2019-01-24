@@ -1,0 +1,18 @@
+<h3>Top Heroes</h3>
+<div  class="row">
+<div class="grid grid-pad col-md-5">
+  <a *ngFor="let hero of heroes; let i = index" class="col-1-4"
+  routerLink="/detail/{{hero.id}}">
+    
+    <div class="module hero">
+        <label class=" col-md-1 bg-dark text-white  text-center">{{i+1}}</label>
+                <label class=" col-md-5 class=badge badge-secondary"
+                >{{hero.name}} </label>
+    </div>
+  </a>
+</div>
+<div class="col-md-5">
+  <app-hero-search></app-hero-search>
+</div>
+
+</div>
